@@ -37,6 +37,46 @@ Before deploying your own fork:
 * Review how password vault entries are protected before storage.
 * Do not commit `.env`, IDE files, build artifacts, local docs, or deployment-specific configuration.
 
+## What Was Implemented
+
+* User registration and login flow with JWT authentication.
+* Spring Security integration with protected API routes.
+* BCrypt hashing for user account passwords.
+* Password CRUD with user ownership checks.
+* Category CRUD scoped per authenticated user.
+* Soft delete behavior for password records.
+* React dashboard for managing saved password entries.
+* Dark/light theme support.
+* Password visibility toggle, copy interaction, password generation UI, and password strength indicator.
+* CSV import and export flow for password records.
+* User profile update flow.
+* Account deletion flow with related data cleanup.
+* Email change request and verification token flow.
+* Legacy email notification service with optional Supabase/Resend integration.
+* H2 local development database configuration.
+* PostgreSQL/Supabase-compatible configuration through environment variables.
+* Dockerfile for backend containerization.
+* Frontend API configuration through `REACT_APP_API_URL`.
+
+## Technical Highlights
+
+* Full-stack integration between a React SPA and a Spring Boot REST API.
+* JWT-based stateless authentication.
+* Repository/service/controller structure on the backend.
+* JPA entity modeling for users, passwords, categories, and email verification tokens.
+* Owner-based authorization checks for user-specific data.
+* Configurable local and deployment environments through environment variables.
+* CSV parsing/export logic for data portability.
+* Responsive UI built with reusable React components.
+
+## Tech Stack
+
+* Frontend: React 18, Tailwind CSS, Lucide React
+* Backend: Spring Boot 3, Spring Security, Spring Data JPA
+* Authentication: JWT, BCrypt
+* Databases: H2 for local development, PostgreSQL/Supabase via environment variables
+* Build tools: npm, Maven
+
 ## Portfolio Summary
 
 This project demonstrates practical experience with full-stack application development, authentication, REST API design, database persistence, frontend state management, user-specific data access, deployment-oriented configuration, and the security tradeoffs involved in building applications that handle sensitive user data.
