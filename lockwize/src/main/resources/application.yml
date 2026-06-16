@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:lockwize;DB_CLOSE_DELAY=-1;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 5
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: ${SPRING_JPA_SHOW_SQL:true}
+
+server:
+  servlet:
+    context-path: /
+
+app:
+  public-url: ${APP_PUBLIC_URL:http://localhost:3000}
+  email:
+    from: ${APP_EMAIL_FROM:Lockwize <no-reply@example.com>}
+  cors:
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:3000}
+
+jwt:
+  secret: ${JWT_SECRET:local-development-jwt-secret-change-before-deploying}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+supabase:
+  url: ${SUPABASE_URL:}
+  service-role-key: ${SUPABASE_SERVICE_ROLE_KEY:}
+  anon-key: ${SUPABASE_ANON_KEY:}
+  email:
+    api-key: ${RESEND_API_KEY:}

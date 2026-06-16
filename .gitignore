@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+build/
+dist/
+target/
+lockwize/target/
+
+# Local docs and refactor notes
+docs/
+
+# IDE/editor metadata
+.idea/
+.vscode/
+.codex/
+.agents/
+*.iml
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
